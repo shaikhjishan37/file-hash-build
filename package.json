@@ -1,0 +1,26 @@
+{
+    "name": "file-hasher-build",
+    "version": "0.0.1",
+    "description": "Files hasher based on content",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "shaikhjishan37@gmail.com",
+    "license": "MIT",
+    "dependencies": {
+      
+    },
+    "engines": {
+      "node": ">=4.0.0"
+    },
+    "bin": {
+      "hashfiles": "index.js"
+    },
+    "keywords": [
+      "file-hasher-build",
+      "file",
+      "hash",
+      "build"
+    ]
+  }
+  
