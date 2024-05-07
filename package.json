@@ -1,6 +1,6 @@
 {
     "name": "file-hasher-build",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "description": "Files hasher based on content",
     "scripts": {
       "test": "echo \"Error: no test specified\" && exit 1"

@@ -47,18 +47,26 @@ const processFile = (file, filePath, extensions, filePathCleanUp, impactFiles = 
 
 const procesFolders = (folderPaths, extensions, filePathCleanUp, impactFiles) => {
   folderPaths.forEach( (folderPath) => {
-    const folders = fs.readdirSync(folderPath);
+    try {
+      const folders = fs.readdirSync(folderPath);
 
-    folders.forEach((folderContent) => {
-      const childPath = `${folderPath}/${folderContent}`;
-      const stats = fs.statSync(childPath);
+      folders.forEach((folderContent) => {
+        try {
+          const childPath = `${folderPath}/${folderContent}`;
+          const stats = fs.statSync(childPath);
 
-      if ( stats.isFile() ) {
-        processFile(folderContent, childPath, extensions, filePathCleanUp, impactFiles);
-      } else if ( stats.isDirectory() ) {
-        procesFolders([childPath], extensions, filePathCleanUp, impactFiles);
-      }
-    })
+          if ( stats.isFile() ) {
+            processFile(folderContent, childPath, extensions, filePathCleanUp, impactFiles);
+          } else if ( stats.isDirectory() ) {
+            procesFolders([childPath], extensions, filePathCleanUp, impactFiles);
+          }
+        } catch(error) {
+          console.log(error)
+        }
+      })
+    } catch(error) {
+      console.log(error)
+    }
   } );
 }
 
