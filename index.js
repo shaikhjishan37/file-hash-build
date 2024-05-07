@@ -94,3 +94,5 @@ const procesFolders = (folderPaths, extensions, filePathCleanUp, impactFiles) =>
 
   procesFolders(folderPaths, extensions, filePathCleanUp, impactFiles);
 })('-folder', '-fileExtension', '-postProcessCleanUpPath', '-impactFilesPath');
+
+console.log("File hasher Finished!");
